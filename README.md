@@ -14,8 +14,8 @@ Esta app consiste en **una sola pantalla** donde se debe tratar de adivinar una 
 
 ### Sugerencias:
 - Tener widgets reutilizables para estar cambiando el contenido de los textos o de la fila de los botones ya sea para mostrar strings diferentes en los textos o cero, uno o tres botones (cada uno con su acción) en la fila.
-- Inicializar dos listas (en el BLoC) que contengan las mismas palabras pero en orden diferente (list.shuffle()) una lista mostrará palabras sugeridas en la vista y la otra va a contener la palabra a adivinar. Se debe tener un índice en el BLoC que incremente cada que se presiona el botón de skip o got it que servirá para mostrar la siguiente palabra y al hacer la comparación con la palabra sugerida vs la real.
+- Inicializar dos listas (en el BLoC) que contengan las mismas palabras pero en orden diferente (`list.shuffle()`) una lista mostrará palabras sugeridas en la vista y la otra va a contener la palabra a adivinar. Se debe tener un índice en el BLoC que incremente cada que se presiona el botón de **skip** o **got it** que servirá para mostrar la siguiente palabra y al hacer la comparación con la palabra sugerida vs la real.
 - Llevar la cuenta de los aciertos con un contador en el BLoC.
 - Poner atención en los eventos y estados ya sea para indicar al BLoC que haga algo o para indicar a la vista que muestre algo.
-- El boton de play again deberá reiniciar contadores, reordenar las listas y mostrar el contenido del screenshot 1 para volver a empezar el juego.
+- El boton de **play again** deberá reiniciar contadores, reordenar las listas y mostrar el contenido del screenshot 1 para volver a empezar el juego.
 
