@@ -10,6 +10,7 @@ Esta app consiste en **una sola pantalla** donde se debe tratar de adivinar una 
 | Screenshot 2 | Un texto que indica el puntaje de palabras adivinadas en forma de columna con la fila que tiene los botones. Un botón verde con texto blanco y dos botones blancos separados dentro de una fila casi hasta abajo de la pantalla. |
 | Screenshot 3 | Mismos dos textos centrados y en forma de columna y un botón verde con texto blanco con padding hacia arriba. |
 
+![Imagen Referencia](https://github.com/EduGro/MovilesTarea3/blob/master/Reference.png?raw=true)
 
 ### Sugerencias:
 - Tener widgets reutilizables para estar cambiando el contenido de los textos o de la fila de los botones ya sea para mostrar strings diferentes en los textos o cero, uno o tres botones (cada uno con su acción) en la fila.
