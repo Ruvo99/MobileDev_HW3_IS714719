@@ -2,6 +2,7 @@
 
 ## Ejercicio 1: GUESS THE WORD.
 Esta app consiste en **una sola pantalla** donde se debe tratar de adivinar una palabra en base a una sugerencia y se lleva la cuenta de aciertos misma que se va mostrando.
+
 **Utilizar BLoC para manejar los estados y separar la lógica de la vista.**
 
 | Screenshot | Descripcion |
