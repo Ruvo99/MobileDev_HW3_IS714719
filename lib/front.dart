@@ -14,7 +14,10 @@ class _FrontState extends State<Front> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text('Guess the Word'),
+        backgroundColor: Colors.lightGreen,
+      ),
       body: BlocProvider(
         create: (context) => FrontBloc(),
         child: BlocConsumer<FrontBloc, FrontState>(
@@ -29,8 +32,9 @@ class _FrontState extends State<Front> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Expanded(
-                        flex: 2,
+                        flex: 5,
                         child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(state.titulo),
                             SizedBox(height: 10.0),
@@ -46,29 +50,35 @@ class _FrontState extends State<Front> {
                         child: Column(
                           children: [
                             Text(state.contador.toString()),
+                            SizedBox(
+                                height:
+                                    MediaQuery.of(context).size.height * 0.04),
                             Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 MaterialButton(
                                     child: Text("SKIP"),
-                                    color: Colors.green,
                                     onPressed: () {
                                       BlocProvider.of<FrontBloc>(context)
                                           .add(SkipEvent());
                                     }),
                                 MaterialButton(
-                                    child: Text("GOT IT"),
-                                    color: Colors.green,
+                                    child: Text(
+                                      "GOT IT",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    color: Colors.lightGreen,
                                     onPressed: () {
                                       BlocProvider.of<FrontBloc>(context)
                                           .add(GotEvent());
                                     }),
                                 MaterialButton(
-                                    child: Text("END GAME"),
-                                    color: Colors.green,
-                                    onPressed: () {
-                                      BlocProvider.of<FrontBloc>(context)
-                                          .add(EndEvent());
-                                    }),
+                                  child: Text("END GAME"),
+                                  onPressed: () {
+                                    BlocProvider.of<FrontBloc>(context)
+                                        .add(EndEvent());
+                                  },
+                                ),
                               ],
                             ),
                           ],
@@ -82,30 +92,23 @@ class _FrontState extends State<Front> {
               return Container(
                 child: Center(
                   child: Column(
-                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Expanded(
-                        flex: 2,
-                        child: Column(
-                          children: [
-                            Text(state.titulo),
-                            SizedBox(height: 10.0),
-                            Text(
-                              state.contador.toString(),
-                              style: TextStyle(fontSize: 30),
-                            ),
-                          ],
-                        ),
+                      Text(state.titulo),
+                      SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.04),
+                      Text(
+                        state.contador.toString(),
+                        style: TextStyle(fontSize: 30),
                       ),
-                      Expanded(
-                        flex: 10,
-                        child: MaterialButton(
-                            child: Text("PLAY AGAIN"),
-                            color: Colors.green,
-                            onPressed: () {
-                              BlocProvider.of<FrontBloc>(context)
-                                  .add(StartEvent());
-                            }),
+                      SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.15),
+                      MaterialButton(
+                        child: Text("PLAY AGAIN", style: TextStyle(color: Colors.white),),
+                        color: Colors.lightGreen,
+                        onPressed: () {
+                          BlocProvider.of<FrontBloc>(context).add(StartEvent());
+                        },
                       ),
                     ],
                   ),
@@ -121,7 +124,9 @@ class _FrontState extends State<Front> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text("Get ready to"),
-                          SizedBox(height: 10.0),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * .01,
+                          ),
                           Text(
                             "Guess the word!",
                             style: TextStyle(fontSize: 30),
@@ -138,7 +143,7 @@ class _FrontState extends State<Front> {
                             color: Colors.white,
                           ),
                         ),
-                        color: Colors.green,
+                        color: Colors.lightGreen,
                         onPressed: () {
                           BlocProvider.of<FrontBloc>(context).add(StartEvent());
                         },
